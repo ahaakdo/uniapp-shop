@@ -66,6 +66,10 @@ const gotoSearchList = () => {
     })
   }
 }
+const inpVal = ref('')
+const confirmVal = () => {
+  console.log(1)
+}
 </script>
 
 <template>
@@ -74,6 +78,7 @@ const gotoSearchList = () => {
     <view class="search">
       <view class="input">
         <input v-model="searchVal" placeholder="请输入搜索内容" />
+        <uni-easyinput v-model="inpVal" type="text" placeholder="" @confirm="confirmVal" />
         <button class="button" @tap="gotoSearchList">搜索</button>
       </view>
     </view>
@@ -294,5 +299,17 @@ page {
       }
     }
   }
+}
+
+.uni-easyinput__content {
+  .uni-easyinput__content-input {
+    background: #333 !important;
+    // border: none;
+  }
+}
+
+.uni-easyinput__content-input {
+  background: #333 !important;
+  // border: none;
 }
 </style>
